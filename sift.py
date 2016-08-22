@@ -4,6 +4,10 @@ import numpy as np
 import pylab
 from subprocess import Popen, PIPE, STARTUPINFO, STARTF_USESHOWWINDOW 
 
+#using windows specific
+if os.name == 'nt'
+    from subprocess import STARTUPINFO, STARTF_USESHOWWINDOW
+
 def process_image(imagename,resultname,params="--edge-thresh 10 --peak-thresh 5"):
 	""" Process an image and save the results in a file. """
 	if imagename[-3:] != 'pgm':
